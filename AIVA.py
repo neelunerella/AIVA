@@ -1,16 +1,19 @@
 import speech_recognition as sr
 import pyttsx3
 import datetime
-import wikipedia
+#import wikipedia
 import webbrowser
 import os
 import time
 import subprocess
-import wolframalpha
+# import wolframalpha
 import json
-import requests
+# import requests
 
 engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.say("I will speak this text")
+engine.runAndWait()
 r = sr.Recognizer()
 
 def speak(text):
@@ -59,12 +62,12 @@ def main():
         if "bye" in command or "stop" in command:
             speak('Ok bye!')
             break
-        if 'wikipedia' in command:
-            statement = command.replace("wikipedia", "")
-            results = wikipedia.summary(statement, sentences = 3)
-            speak("According to Wikipedia")
-            print(results)
-            speak(results)
+        # if 'wikipedia' in command:
+        #     statement = command.replace("wikipedia", "")
+        #     results = wikipedia.summary(statement, sentences = 3)
+        #     speak("According to Wikipedia")
+        #     print(results)
+        #     speak(results)
         elif "open youtube" in command:
             webbrowser.open_new_tab("https://wwww.youtube.com")
             speak("youtube is open now")
@@ -83,3 +86,6 @@ def main():
             time.sleep(5)
         time.sleep(3)
         
+        
+if __name__ == "__main__":
+    main()
