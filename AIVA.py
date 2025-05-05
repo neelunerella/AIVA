@@ -69,11 +69,11 @@ def main():
         #     print(results)
         #     speak(results)
         elif "open youtube" in command:
-            webbrowser.open_new_tab("https://wwww.youtube.com")
+            webbrowser.open_new_tab("https://www.youtube.com")
             speak("youtube is open now")
             time.sleep(5)
         elif "open google" in command:
-            webbrowser.open_new_tab("https://wwww.google.com")
+            webbrowser.open_new_tab("https://www.google.com")
             speak("Google is open now")
             time.sleep(5)
         elif "search" in command:
