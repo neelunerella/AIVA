@@ -11,6 +11,6 @@ Create a requirements.txt file to install:
 1. SpeechRecognition (pip3)
 2. pyttsx3 (pip)
 3. wikipedia (doesn't exist)
-4. pyaudio (pip)
+4. pyaudio (pip)pytho
 
 Need to install PyAudio (only works with python3.10 so create a virtual environment)
