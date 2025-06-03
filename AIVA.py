@@ -9,6 +9,7 @@ import subprocess
 # import wolframalpha
 import json
 # import requests
+from EmoModelClass import EmoModelWrapper
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -57,8 +58,13 @@ def read_note():
     
 def main():
     speak("Hello, my name is AIVA. Your Artificial Intelligence Voice Assistant. How can I help you?")
+    emotionDet = EmoModelWrapper("emoModel.keras", "tokenizer.joblib", "label_encoder.joblib", 100)
     while True:
         command = listen().lower()
+        prediction = emotionDet.predict([command])
+        feeling = "You are feeling " + prediction[0]
+        speak(feeling)
+        print("You are feeling", prediction)
         if "bye" in command or "stop" in command:
             speak('Ok bye!')
             break
